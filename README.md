@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Meilisearch" width="200" height="200" />
+  <img src="assets/banner.png" alt="Meilisearch" />
 </p>
 
 <h1 align="center">Meilisearch</h1>
