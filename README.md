@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Meilisearch" width="200" height="200" />
+  <img width="350" src="assets/meilisearch_logo_light.svg?sanitize=true#gh-light-mode-only">
+  <img width="350" src="assets/meilisearch_logo_dark.svg?sanitize=true#gh-dark-mode-only">
 </p>
-
-<h1 align="center">Meilisearch</h1>
 
 <h4 align="center">
   <a href="https://www.meilisearch.com">Website</a> |
