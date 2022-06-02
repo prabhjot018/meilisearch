@@ -144,7 +144,7 @@ mod real {
             }
         }
 
-        pub async fn process_document_addition_batch(&self, mut tasks: Vec<Task>) -> Vec<Task> {
+        pub async fn process_document_addition_batch(&self, tasks: &mut [Task]) {
             fn get_content_uuid(task: &Task) -> Uuid {
                 match task {
                     Task {
@@ -192,7 +192,8 @@ mod real {
                                     timestamp: now,
                                 });
                             }
-                            return tasks;
+
+                            return;
                         }
                     };
 
@@ -227,8 +228,6 @@ mod real {
                     for task in tasks.iter_mut() {
                         task.events.push(event.clone());
                     }
-
-                    tasks
                 }
                 _ => panic!("invalid batch!"),
             }
@@ -483,7 +482,7 @@ mod test {
             Self::Mock(mocker)
         }
 
-        pub async fn process_document_addition_batch(&self, tasks: Vec<Task>) -> Vec<Task> {
+        pub async fn process_document_addition_batch(&self, tasks: &mut [Task]) {
             match self {
                 IndexResolver::Real(r) => r.process_document_addition_batch(tasks).await,
                 IndexResolver::Mock(m) => unsafe {
