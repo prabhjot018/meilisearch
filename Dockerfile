@@ -27,7 +27,7 @@ ENV     MEILI_SERVER_PROVIDER docker
 RUN     apk update --quiet \
         && apk add -q --no-cache libgcc tini curl
 
-# add my  meilisearch to the `/bin` so you can run it from anywhere and it's easy
+# add meilisearch to the `/bin` so you can run it from anywhere and it's easy
 # to find.
 COPY    --from=compiler /meilisearch/target/release/meilisearch /bin/meilisearch
 # To stay compatible with the older version of the container (pre v0.27.0) we're
